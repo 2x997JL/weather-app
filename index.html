@@ -9,22 +9,22 @@
     <title>Document</title>
 </head>
 
-<body class="has-background-grey-lighter">
+<body class="has-background-grey-lighter" id="contents">
     <section class="section">
-        <div class="container">
+        <div class="container" id="Weather_box">
             <h1 class="title has-background-link has-text-white">Weather Forecast</h1>
             <div class="columns">
                 <div class="column is-one-quarter">
                     <div class="field has-addons">
                         <div class="control">
-                            <input class="input" type="text" placeholder="City">
+                            <input class="input" id="city-input" type="text" placeholder="City">
                         </div>
                         <div class="control">
-                            <button class="button is-info">Search</button>
+                            <button class="button is-info" id="WeatherBtn">Search</button>
                         </div>
                     </div>
                 </div>
-                <div class="column">
+                <div class="column" id="currentWeatherBox">
                     <p class="title has-background-link has-text-white">Current Weather</p>
                     <div class="box">
                         <h3>Temperature: <span id="current-weather-temp"></span> (°F)</h3>
@@ -74,6 +74,10 @@
             </div>
         </div>
     </section>
+
+
+    <script src="assets/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
 
 </body>
 
