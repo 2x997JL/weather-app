@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <title>Document</title>
+</head>
+
+<body class="has-background-grey-lighter">
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-background-link has-text-white">Weather Forecast</h1>
+            <div class="columns">
+                <div class="column is-one-quarter">
+                    <div class="field has-addons">
+                        <div class="control">
+                            <input class="input" type="text" placeholder="City">
+                        </div>
+                        <div class="control">
+                            <button class="button is-info">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="title has-background-link has-text-white">Current Weather</p>
+                    <div class="box">
+                        <h3>Temperature: <span id="current-weather-temp"></span> (°F)</h3>
+                        <h3>Wind: <span id="current-weather-wind"></span> mph</h3>
+                        <h3>Humidity: <span id="current-weather-humidity"></span>%</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <p class="title has-background-link has-text-white">5 Day Forecast</p>
+                    <div class="box columns">
+                        <div class="column">
+                            <h3 class="has-background-link has-text-white">Day 1</h3>
+                            <h3>Temperature: <span id="day-1-temp"></span> (°F)</h3>
+                            <h3>Wind: <span id="day-1-wind"></span> mph</h3>
+                            <h3>Humidity: <span id="day-1-humidity"></span>%</h3>
+                        </div>
+                        <div class="column">
+                            <h3 class="has-background-link has-text-white">Day 2</h3>
+                            <h3>Temperature: <span id="day-2-temp"></span> (°F)</h3>
+                            <h3>Wind: <span id="day-2-wind"></span> mph</h3>
+                            <h3>Humidity: <span id="day-2-humidity"></span>%</h3>
+                        </div>
+                        <div class="column">
+                            <h3 class="has-background-link has-text-white">Day 3</h3>
+                            <h3>Temperature: <span id="day-3-temp"></span> (°F)</h3>
+                            <h3>Wind: <span id="day-3-wind"></span> mph</h3>
+                            <h3>Humidity: <span id="day-3-humidity"></span>%</h3>
+                        </div>
+                        <div class="column">
+                            <h3 class="has-background-link has-text-white">Day 4</h3>
+                            <h3>Temperature: <span id="day-4-temp"></span> (°F)</h3>
+                            <h3>Wind: <span id="day-4-wind"></span> mph</h3>
+                            <h3>Humidity: <span id="day-4-humidity"></span>%</h3>
+                        </div>
+                        <div class="column">
+                            <h3 class="has-background-link has-text-white">Day 5</h3>
+                            <h3>Temperature: <span id="day-5-temp"></span> (°F)</h3>
+                            <h3>Wind: <span id="day-5-wind"></span> mph</h3>
+                            <h3>Humidity: <span id="day-5-humidity"></span>%</h3>
+                        </div>
+                        <div class="column">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
