@@ -19,6 +19,9 @@ var day4Humidity = document.getElementById("day-4-humidity");
 var day5Temp = document.getElementById("day-5-temp");
 var day5Wind = document.getElementById("day-5-wind");
 var day5Humidity = document.getElementById("day-5-humidity");
+var searchHistory = document.getElementById("searchHistory");
+
+localStorage.removeItem('searchHistory')
 
 weatherSubmitButton.addEventListener('click', function (event) {
 
@@ -26,7 +29,27 @@ weatherSubmitButton.addEventListener('click', function (event) {
     console.log(weatherInput.value);
     console.log("Fetching weather info...");
     fetchWeather(weatherInput.value);
+    var items = JSON.parse(localStorage.getItem('searchHistory'))
+    if (items === null) {
+        items = []
+    }
+
+
+    items.push(weatherInput.value)
+    localStorage.setItem('searchHistory', JSON.stringify(items))
+    searchHistory.textContent = ""
+    console.log("searching..", items)
+    for (let index = 0; index < items.length; index++) {
+        const element = items[index];
+        var card = document.createElement('div')
+        // card.classList.add('blue')
+        card.textContent = element
+        console.log(element, card)
+        searchHistory.appendChild(card)
+    }
 });
+
+
 
 
 function fetchWeather(location) {
@@ -85,21 +108,21 @@ function fetchWeather(location) {
 var cityNameHistory = [];
 var WeatherKey = "eef0c7305b615df93c13893667426699";
 
-function CityData() {
-    var currentWeatherURL = "https://api.openweathermap.org/geo/1.0/direct?q=c171672f4bbc8048bf259a3ea61decb1"
-    function currentWeatherData() {
-        var currentWindEl = document.createElement('p')
-        var currentHumidityEl = document.createElement('p')
-        var currentVisibiltyEl = document.createElement('p')
+// function CityData() {
+//     var currentWeatherURL = "https://api.openweathermap.org/geo/1.0/direct?q=c171672f4bbc8048bf259a3ea61decb1"
+//     function currentWeatherData() {
+//         var currentWindEl = document.createElement('p')
+//         var currentHumidityEl = document.createElement('p')
+//         var currentVisibiltyEl = document.createElement('p')
 
-        cityNameEl.textContent = data.name
-        var pTempF = 1.8 * (Number(data.main.temp) - 273) + 32
-        pTempF = Math.round(pTempF * 10) / 10
-        currentTempEl.textContent = pTempF + " " + "°F"
-        currentWindEl.textContent = data.wind.speed + " " + "mph"
-        currentHumidityEl.textContent = data.main.humidity + "%"
-        WeatherBtn.addEventListener('click', function (event) {
-            currentWeatherData();
-        })
-    };
-};
+//         cityNameEl.textContent = data.name
+//         var pTempF = 1.8 * (Number(data.main.temp) - 273) + 32
+//         pTempF = Math.round(pTempF * 10) / 10
+//         currentTempEl.textContent = pTempF + " " + "°F"
+//         currentWindEl.textContent = data.wind.speed + " " + "mph"
+//         currentHumidityEl.textContent = data.main.humidity + "%"
+//         WeatherBtn.addEventListener('click', function (event) {
+//             currentWeatherData();
+//         })
+//     };
+// };
